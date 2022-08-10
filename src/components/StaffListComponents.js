@@ -16,7 +16,9 @@ class StaffList extends Component {
         this.setState({ selectedStaff: staff });
     }
 
-   
+    onColumnSelect(column) {
+        this.setState({ defaultColumn: column });
+    }
 
     renderInfor(infor) {
         if (infor != null) {
