@@ -26,7 +26,7 @@ class StaffList extends Component {
                         <CardBody className="col-6">
                             <CardTitle>Họ và tên: {infor.name}</CardTitle>
                             <CardText>Ngày sinh: {dateFormat(infor.doB, "dd/mm/yyyy")}</CardText>
-                            <CardText>Ngày vào công ty: {infor.startDate}</CardText>
+                            <CardText>Ngày vào công ty: {dateFormat(infor.startDate, "dd/mm/yyyy")}</CardText>
                             <CardText>Phòng ban: {infor.department.name}</CardText>
                             <CardText>Số ngày nghỉ còn lại: {infor.annualLeave}</CardText>
                             <CardText>Số ngày đã làm thêm: {infor.overTime}</CardText>
