@@ -8,12 +8,15 @@ class StaffList extends Component {
 
         this.state = {
             selectedStaff: null,
+            defaultColumn: "col-12 col-md-6 col-lg-4 mt-2"
         };
     }
 
     onStaffSelect(staff) {
         this.setState({ selectedStaff: staff });
     }
+
+   
 
     renderInfor(infor) {
         if (infor != null) {
@@ -43,7 +46,7 @@ class StaffList extends Component {
         const staffs = this.props.staffs.map((staff) => {
             // dùng prop tên là staffs được truyên từ App để lọc ra view
             return (
-                <div key={staff.id} className="col-12 col-md-6 col-lg-4 mt-2" style={{"text-align": "center"}}>
+                <div key={staff.id} class="col-12 col-md-6 col-lg-4 mt-2" style={{"text-align": "center"}}>
                     <Card onClick={() => this.onStaffSelect(staff)}>
                         <CardTitle style={{ "line-height": "38px", "margin-bottom": "0" }}>{staff.name}</CardTitle>
                     </Card>
