@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardTitle, Button } from "reactstrap";
 import dateFormat from "dateformat"; 
-
 
 class StaffList extends Component {
     constructor(props) {
@@ -53,11 +52,24 @@ class StaffList extends Component {
         })
         
         return(
-            <div className="container" >
+            <div className="container">
+                
+                <div className="row">
+                    <div className="col-12 mt-3 mb-1" style={{"margin": "auto"}}>
+                    <Button className="mr-1 mb-1" color="success">1 cột</Button>
+                    <Button className="mr-1 mb-1" color="success">2 cột</Button>
+                    <Button className="mr-1 mb-1" color="success">3 cột</Button>
+                    <Button className="mr-1 mb-1" color="success">4 cột</Button>
+                    <Button className="mr-1 mb-1" color="success">6 cột</Button>
+                    </div>
+                </div>
+                
                 <div className="row">
                     {staffs}
                 </div>
-                <p className="mt-2" style={{"color": "blue", "text-align": "center"}}>Bấm vào tên nhân viên để xem thông tin</p>
+                
+                <p className="mt-2" style={{ "color": "blue", "text-align": "center" }}>Bấm vào tên nhân viên để xem thông tin</p>
+                
                 <div className="row">
                     {this.renderInfor(this.state.selectedStaff)}
                 </div>
