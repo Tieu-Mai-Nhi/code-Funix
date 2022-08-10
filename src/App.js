@@ -22,6 +22,7 @@ class App extends Component {
           </div>
         </Navbar>
         <StaffList staffs={this.state.staffs} />
+
         {/* đặt tên prop đc truyền, sẽ được sử dụng là  */}
       </div>
     );

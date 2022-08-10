@@ -1,26 +1,65 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
-
+import dateFormat from "dateformat"; 
 
 
 class StaffList extends Component {
-    
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            selectedStaff: null,
+        };
+    }
+
+    onStaffSelect(staff) {
+        this.setState({ selectedStaff: staff });
+    }
+
+    renderInfor(infor) {
+        if (infor != null) {
+            return (
+                <div className="container mt-2">
+                    <Card>
+                        <div className="row">
+                        <CardImg className="col-6" src={infor.image} alt={infor.name} />
+                        <CardBody className="col-6">
+                            <CardTitle>Họ và tên: {infor.name}</CardTitle>
+                            <CardText>Ngày sinh: {infor.doB}</CardText>
+                            <CardText>Ngày vào công ty: {infor.startDate}</CardText>
+                            <CardText>Phòng ban: {infor.department.name}</CardText>
+                            <CardText>Số ngày nghỉ còn lại: {infor.annualLeave}</CardText>
+                            <CardText>Số ngày đã làm thêm: {infor.overTime}</CardText>
+                        </CardBody>
+                        </div>
+                    </Card>
+                </div>
+            )
+        } else {
+            return <div></div>
+        }
+    }
+
     render() {
         const staffs = this.props.staffs.map((staff) => {
             // dùng prop tên là staffs được truyên từ App để lọc ra view
             return (
-                <div key={staff.id} className="col-12 col-md-6 col-lg-4 mt-2">
-                    <Card>
-                        <CardTitle>{staff.name}</CardTitle>
+                <div key={staff.id} className="col-12 col-md-6 col-lg-4 mt-2" style={{"text-align": "center"}}>
+                    <Card onClick={() => this.onStaffSelect(staff)}>
+                        <CardTitle style={{ "line-height": "38px", "margin-bottom": "0" }}>{staff.name}</CardTitle>
                     </Card>
                 </div>
             )
         })
         
         return(
-            <div className = "container" >
+            <div className="container" >
                 <div className="row">
                     {staffs}
+                </div>
+                <p className="mt-2" style={{"color": "blue", "text-align": "center"}}>Bấm vào tên nhân viên để xem thông tin</p>
+                <div className="row">
+                    {this.renderInfor(this.state.selectedStaff)}
                 </div>
             </div>
         );
