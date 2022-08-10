@@ -61,11 +61,11 @@ class StaffList extends Component {
                 
                 <div className="row">
                     <div className="col-12 mt-3 mb-1" style={{"margin": "auto"}}>
-                    <Button className="mr-1 mb-1" color="success">1 cột</Button>
-                    <Button className="mr-1 mb-1" color="success">2 cột</Button>
-                    <Button className="mr-1 mb-1" color="success">3 cột</Button>
-                    <Button className="mr-1 mb-1" color="success">4 cột</Button>
-                    <Button className="mr-1 mb-1" color="success">6 cột</Button>
+                    <Button onClick={() => this.onColumnSelect("col-12 col-md-6 col-lg-12 mt-2")} className="mr-1 mb-1" color="success">1 cột</Button>
+                    <Button onClick={() => this.onColumnSelect("col-12 col-md-6 col-lg-6 mt-2")} className="mr-1 mb-1" color="success">2 cột</Button>
+                    <Button onClick={() => this.onColumnSelect("col-12 col-md-6 col-lg-4 mt-2")} className="mr-1 mb-1" color="success">3 cột</Button>
+                    <Button onClick={() => this.onColumnSelect("col-12 col-md-6 col-lg-3 mt-2")} className="mr-1 mb-1" color="success">4 cột</Button>
+                    <Button onClick={() => this.onColumnSelect("col-12 col-md-6 col-lg-2 mt-2")} className="mr-1 mb-1" color="success">6 cột</Button>
                     </div>
                 </div>
                 
