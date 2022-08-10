@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
-import Menu from './components/MenuComponent';
-import { DISHES } from './shared/dishes';
+import StaffList from './components/StaffListComponents';
+import { STAFFS } from './shared/staffs';
 class App extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      dishes: DISHES 
-      // định nghĩa state dishes
+      staffs: STAFFS 
     };
   }
 
@@ -19,11 +18,11 @@ class App extends Component {
       <div className="App">
         <Navbar dark color="primary">
           <div className="container">
-            <NavbarBrand href="/"></NavbarBrand>
+            <NavbarBrand href="/">Ứng dụng quản lý nhân sự</NavbarBrand>
           </div>
         </Navbar>
-        <Menu dishes={this.state.dishes} />  
-        {/* truyền  props dishes cho menu*/}
+        <StaffList staffs={this.state.staffs} />
+        {/* đặt tên prop đc truyền, sẽ được sử dụng là  */}
       </div>
     );
   }
