@@ -25,7 +25,7 @@ class StaffList extends Component {
                         <CardImg className="col-6" src={infor.image} alt={infor.name} />
                         <CardBody className="col-6">
                             <CardTitle>Họ và tên: {infor.name}</CardTitle>
-                            <CardText>Ngày sinh: {infor.doB}</CardText>
+                            <CardText>Ngày sinh: {dateFormat(infor.doB, "dd/mm/yyyy")}</CardText>
                             <CardText>Ngày vào công ty: {infor.startDate}</CardText>
                             <CardText>Phòng ban: {infor.department.name}</CardText>
                             <CardText>Số ngày nghỉ còn lại: {infor.annualLeave}</CardText>
