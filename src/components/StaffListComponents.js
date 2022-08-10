@@ -22,14 +22,14 @@ class StaffList extends Component {
                 <div className="container mt-2">
                     <Card>
                         <div className="row">
-                        <CardImg className="col-6" src={infor.image} alt={infor.name} />
-                        <CardBody className="col-6">
-                            <CardTitle>Họ và tên: {infor.name}</CardTitle>
-                            <CardText>Ngày sinh: {dateFormat(infor.doB, "dd/mm/yyyy")}</CardText>
-                            <CardText>Ngày vào công ty: {dateFormat(infor.startDate, "dd/mm/yyyy")}</CardText>
-                            <CardText>Phòng ban: {infor.department.name}</CardText>
-                            <CardText>Số ngày nghỉ còn lại: {infor.annualLeave}</CardText>
-                            <CardText>Số ngày đã làm thêm: {infor.overTime}</CardText>
+                        <CardImg className="col-12 col-md-6" src={infor.image} alt={infor.name} />
+                        <CardBody className="col-12 col-md-6">
+                            <CardTitle className="ml-3 mt-2">Họ và tên: {infor.name}</CardTitle>
+                            <CardText className="ml-3">Ngày sinh: {dateFormat(infor.doB, "dd/mm/yyyy")}</CardText>
+                            <CardText className="ml-3">Ngày vào công ty: {dateFormat(infor.startDate, "dd/mm/yyyy")}</CardText>
+                            <CardText className="ml-3">Phòng ban: {infor.department.name}</CardText>
+                            <CardText className="ml-3">Số ngày nghỉ còn lại: {infor.annualLeave}</CardText>
+                            <CardText className="ml-3">Số ngày đã làm thêm: {infor.overTime}</CardText>
                         </CardBody>
                         </div>
                     </Card>
